@@ -1,0 +1,209 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+<resheader name="resmimetype"><value>text/microsoft-resx</value></resheader><resheader name="version"><value>1.3</value></resheader><resheader name="reader"><value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader><resheader name="writer"><value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader><data name="descriptionDeviceCamera"><value>[必須] カメラの使用有無を設定します。</value></data>
+  <data name="cannotCreatePublishingUtilitySdkVersion_Text"><value>この SDK のバージョン ( {0} ) はベータ版であるためマスターパッケージの作成はできません。
+正式版の SDK を使用してください。</value></data>
+  <data name="versionDialogTitle_Text"><value>{0} について</value></data>
+  <data name="notEnterPEGI_Text"><value>PEGI express の Registered Number (登録番号) が未入力です。
+ジャンルがゲームの場合、PEGI express でレーティングのチェックを行う必要があります。
+このプロジェクトのapp.xmlをPublishing Utilityで開き、[レーティング]タブ - [PEGI express] の Registered Number (登録番号)を入力してください。</value></data>
+  <data name="descriptionDeviceMotion"><value>[必須] モーションセンサーの使用有無を設定します。</value></data>
+  <data name="removeProductTitle_Text"><value>プロダクトの削除</value></data>
+  <data name="updateBlockedSubmitText"><value>ApplicationID = {0} のタイトルがすでに販売されています。 
+{1} によりこのタイトルを更新することはできません。
+原因を解決した後、再度マスターパッケージを作成・提出してください。</value></data>
+  <data name="nameByteOverMsgBoxTitle_Text"><value>名前長エラー</value></data>
+  <data name="notEnterPSMRating_Text"><value>PSM Age Rating Systemのレーティングチェックが行われていません。
+このプロジェクトのapp.xmlをPublishing Utilityで開き、[レーティング]タブ - [PlayStation Age Rating System]でレーティングチェックを行ってください。</value></data>
+  <data name="dropHereToExtract_Text"><value>ここにパッケージをドロップすると
+展開されます</value></data>
+  <data name="cannotAdd21thProductMsgBoxTitle_Text"><value>プロダクト追加エラー</value></data>
+  <data name="changedUnmodificationBody_Text"><value>バージョンアップ時に変更不可能な、
+以下の項目が変更されています。
+</value></data>
+  <data name="uninstallAppsDialogTitle_Text"><value>アプリのアンインストール</value></data>
+  <data name="openSeedFileDialogTitle_Text"><value>インポートするシードファイルを選択してください</value></data>
+  <data name="submissionErrorText_3115"><value>指定されたアプリ名（類似のものを含む）は既に利用されています。
+{0}
+別の名前に変更してください。</value></data>
+  <data name="submissionErrorText_2401"><value>このマスターパッケージはサポート対象外の SDK ( Runtime Version {0} ) で作成されているため提出できません。 
+サポート対象の SDK を使用してマスターパッケージを作成してください。</value></data>
+  <data name="submissionErrorText_2403"><value>審査に提出するためのマスターパッケージが既にDevPortalにアップロードされています。
+このマスターパッケージをアップロードするためには、
+既にアップロードされているマスターパッケージをDevPortalで取り下げる必要があります。</value></data>
+  <data name="submissionErrorText_2402"><value>銀行口座の登録とその後のSCEによる手続きが完了していません。銀行口座の登録が完了していないと、マスターパッケージを作成/アップロードできません。</value></data>
+  <data name="submissionErrorText_2405"><value>既にリリース済みで変更してはいけないデータが変更されています。
+修正してください。</value></data>
+  <data name="submissionErrorText_2404"><value>同一アプリを審査中ですので、マスターパッケージをアップロードできません。</value></data>
+  <data name="submissionErrorText_2407"><value>このマスターパッケージはサポート対象外の SDK ( Sdk Version {0} ) で作成されているため提出できません。
+サポート対象の SDK を使用してマスターパッケージを作成してください。</value></data>
+  <data name="submissionErrorText_2406"><value>既にリリース済みのアプリバージョンに比べ、同じか古いバージョンが指定されています。
+リリース済みアプリバージョンより新しいアプリバージョンに修正してください。</value></data>
+  <data name="submissionErrorText_2301"><value>デベロッパー登録が行われておりません。DevPortalにてデベロッパー登録およびパブリッシャーライセンスの購入が必要です。</value></data>
+  <data name="succeedToGenerate_Text"><value>{0}の作成に成功しました。</value></data>
+  <data name="descriptionDeviceTouch"><value>[必須] タッチパネルの使用有無を設定します。</value></data>
+  <data name="descriptionScoreboards"><value>[必須] PSN(SM) が提供するスコアボード(スコアランキング)サービスの利用有無を設定します。</value></data>
+  <data name="invalidPngMsgBoxTitle_Text"><value>フォーマットエラー</value></data>
+  <data name="submissionErrorText_2002or2300"><value>パブリッシャーライセンスを保持していないか、もしくはパブリッシャーライセンスの有効期限が切れています。
+DevPortalでパブリッシャーライセンスの購入が必要です。</value></data>
+  <data name="fileNotFoundMsgBoxTitle_Text"><value>ファイルが見つかりません</value></data>
+  <data name="enterWithinX_Text"><value>名前は{0}文字以内で入力してください。</value></data>
+  <data name="descriptionIcon256x256"><value>[必須] 256x256サイズのアイコンファイル。32bit ARGB PNG</value></data>
+  <data name="openPackageFileDialogTitle_Text"><value>パッケージファイルを選択してください</value></data>
+  <data name="loadPromptMsgBoxTitle_Text"><value>データをロードします</value></data>
+  <data name="toolTipProductLabel_Text"><value>プロダクトラベルを入力します。
+[A-Z0-9] の文字を使用し、6文字で定義して下さい</value></data>
+  <data name="uninstallAppsConfirmationBody_Text"><value>上記のアプリがアンインストールされます</value></data>
+  <data name="installAppsDialogBody_Text"><value>アプリ "{0}"
+のインストールが完了しました</value></data>
+  <data name="consumableCheckBox_Text"><value>消費型</value></data>
+  <data name="saveFileDialogTitle_Text"><value>セーブするファイルを選択してください</value></data>
+  <data name="stringTooLongMsgBoxBody_Text"><value>貼り付けようとした文字列(長さ:{0})が、フィールドの制限(長さ:{1})を超えています。
+切り詰められました。</value></data>
+  <data name="descriptionIcon128x128"><value>[必須] 128x128サイズのアイコンファイル。32bit ARGB PNG</value></data>
+  <data name="illegalAccountInformation_Text"><value>アカウント情報が正しくありません</value></data>
+  <data name="fileSizeTooBigBody_Text"><value>ERROR: 出力ファイルの合計サイズが1GiBを超えています。
+Total size = {0} MiB
+"{1}"
+制限を超えた為マスターパッケージが作成できません。</value></data>
+  <data name="descriptionDeviceGamePad"><value>[必須] ゲームパッドよりの入力がTrueで有効、Falseで無効になります。
+Trueにした場合、ハードウェアパッドの無いデバイス上ではオンスクリーンコントローラーが有効になります。</value></data>
+  <data name="loadPromptMsgBoxBody_Text"><value>この操作により今まで編集したデータが破棄されます。
+その前にセーブをしますか？</value></data>
+  <data name="descriptionManagedHeap"><value>[必須] アプリケーションが使用可能なマネージドヒープメモリの最大値を指定します。[KiB]
+Managed HeapとResource Heapの合計を96MiBより大きくする事はできません</value></data>
+  <data name="descriptionCopyrightShort"><value>[必須] アプリケーションの短い著作権表記</value></data>
+  <data name="notUseApha_Text"><value>アイコンに使用するPNG形式ファイルのアルファ値は、すべて0xFF(不透明)でなければいけません。</value></data>
+  <data name="descriptionVersion"><value>[必須] アプリケーションバージョン番号。xX.YY 形式、小数点以下二桁、範囲は1.00～99.99
+既にストアにて公開されたバージョンがある場合、それよりも番号を上げる必要があります。</value></data>
+  <data name="onlyUseXCharactor_Text"><value>使用できる文字は[a-zA-Z0-9_-]のみです。</value></data>
+  <data name="openFileDialogTitle_Text"><value>ロードするファイルを選択してください</value></data>
+  <data name="openPsmPackageFileDialogFilter_Text"><value>PSM マスターパッケージ(*.psmp)|*.psmp|すべてのファイル(*.*)|*.*</value></data>
+  <data name="descriptionGenre1"><value>[必須] アプリケーションのプライマリジャンル。ストアでの分類・検索に用いられます。</value></data>
+  <data name="descriptionGenre2"><value>[任意] アプリケーションのセカンダリジャンル。（当面ストアでは使われないかもしれません）
+Level1分類 (Games/Apps) を Primary Genre と異なる物を選ぶ事は出来ません。</value></data>
+  <data name="startDevAssistant_Text"><value>PS Vitaの場合、PSM DevAssistantを起動しておいてください。</value></data>
+  <data name="UpdateDeviceSeed_Text"><value>接続されているデバイスのデバイスシードを更新しますか？</value></data>
+  <data name="noPublisherKeyBody_Text"><value>パブリッシャー鍵が見つかりません。
+パブリッシャー契約はお済みですか？契約がお済みの場合は、Publishng Utility にてパブリッシャー鍵の作成またはインポートを行ってください。</value></data>
+  <data name="overwritePublisherKey_Text"><value>パブリッシャ鍵を上書きした場合、次の作業を行う必要があるので注意してください。
+- 新しいパブリッシャ鍵でアプリ鍵を再作成し、PSMアプリを再ビルドする。
+- 開発メンバーに新しいパブリッシャ鍵とアプリ鍵を配布しなおす。
+
+上書きしますか？</value></data>
+  <data name="descriptionRatingLockLevel"><value>[自動] パレンタルロック(保護者による利用制限)のレベル。</value></data>
+  <data name="descriptionIcon512x512"><value>[必須] 512x512サイズのアイコンファイル。32bit ARGB PNG</value></data>
+  <data name="keyMismatchError"><value>鍵の不整合エラーが発生しました。
+- パブリッシャ鍵が有効か確認してください。
+- デバイスシードとアプリ鍵を削除し、再作成してください。</value></data>
+  <data name="existPublisherKey_Text"><value>パブリッシャ鍵がすでに存在します。</value></data>
+  <data name="cannotFind_Text"><value>{0}が見つかりません。</value></data>
+  <data name="descriptionDeveloperWebSite"><value>[必須] 開発者・もしくはアプリケーションのウェブサイトのURLを入力して下さい
+http:// か https:// のどちらかで始まる必要があります。</value></data>
+  <data name="descriptionSplash"><value>[必須] PS Vita Live Area用のスプラッシュアイコン。 854x480、8bit Indexed PNG</value></data>
+  <data name="descriptionAppShortNames"><value>[必須] アプリケーションの短縮名を記述します。16文字以内かつ51byte以内(UTF8)</value></data>
+  <data name="nameByteOverMsgBoxBody_Text"><value>名前のバイト長が制限を超えました。</value></data>
+  <data name="installAppsDialogLabel1_Text"><value>DevAssistant のアプリ一覧に表示する名前を指定して下さい</value></data>
+  <data name="sameFilename_Text"><value>入力ファイル名と出力ファイル名が同じです。
+{0}</value></data>
+  <data name="newPromptMsgBoxTitle_Text"><value>データをリセットします</value></data>
+  <data name="uninstallAppsDialogBody_Text"><value>アプリのアンインストールが完了しました</value></data>
+  <data name="restartFormTitle_Text"><value>アプリケーションの再起動が必要です</value></data>
+  <data name="NicknameIsNotNamed_Text"><value>ニックネームが命名されていません。</value></data>
+  <data name="installAppsDialogLabel2_Text"><value>名前</value></data>
+  <data name="updateBlockedSubmitText_2xTo1x"><value>PSM SDK {1} で作成された ApplicationID = {0} のタイトルがすでに販売されています。 
+PSM SDK {2} で作成したマスターパッケージでは、このタイトルを更新することはできません。
+このタイトルを更新したい場合、 PSM SDK {3} を使ってマスターパッケージを作成・提出してください。</value></data>
+  <data name="cannotSubmissionPsmpSdkVersion_Text"><value>このマスターパッケージはベータ版の SDK ( {0} ) で作成されているため提出できません。
+正式版の SDK を使用してマスターパッケージを作成してください。</value></data>
+  <data name="invalidForamat_Text"><value>{0}のフォーマットは正しくありません。</value></data>
+  <data name="descriptionDefaultLocale"><value>[必須] デフォルトのロケール（言語及び地域）。　エンドユーザーがリクエストする言語が未定義だった場合にこの値が用いられます。極力 en-US を選択する様にしてください。ローカライズ可能な項目については、ここで選択したロケールの値はすべて定義する必要があります。</value></data>
+  <data name="descriptionMaxScreenSize"><value>[必須] スクリーンの最大解像度を設定します。</value></data>
+  <data name="updateBlockedSubmitText_1xTo2x"><value>PSM SDK {1} で作成された ApplicationID = {0} のタイトルがすでに販売されています。 
+PSM SDK {2} で作成したマスターパッケージでは、このタイトルを更新することはできません。
+このタイトルを更新したい場合、 PSM SDK {3} を使ってマスターパッケージを作成・提出してください。</value></data>
+  <data name="cannotSellContentMsgBoxBody_Text"><value>このPSMアプリのレーティング結果はPSMアプリケーション開発ガイドラインに違反しているので、パッケージできません。レーティング結果をご確認ください。</value></data>
+  <data name="installAppsDialogTitle_Text"><value>アプリのインストール</value></data>
+  <data name="failedToGenerate_Text"><value>{0}の作成に失敗しました。</value></data>
+  <data name="fileNotFoundMsgBoxBody_Text"><value>"{0}"
+が見つかりません。</value></data>
+  <data name="stringTooLongMsgBoxTitle_Text"><value>文字列の張り付け失敗</value></data>
+  <data name="removeProductBody_Text"><value>プロダクトを削除しようとしています。本当に削除しますか？
+一旦サブミッションが受理されたプロダクトは、それ以降削除する事ができません。</value></data>
+  <data name="restartFormBody_Text"><value>新しい設定を有効にするにはアプリケーションを再起動する必要があります。
+今、再起動しますか？</value></data>
+  <data name="notEnterESRB_Text"><value>ESRB Short Form の Certificate Code (認証コード) が未入力です。
+ジャンルがゲームの場合、ESRB Short Form でレーティングのチェックを行う必要があります。
+このプロジェクトのapp.xmlをPublishing Utilityで開き、[レーティング]タブ - [ESRB Short Form] の Certificate Code (認証コード) を入力してください。</value></data>
+  <data name="invalidPngMsgBoxBody1_Text"><value>要求に適合しない PNG ファイルが選ばれました。
+Size={0}x{1},  {2}</value></data>
+  <data name="descriptionProjectName"><value>[必須] 1) DevPotal上でこのアプリを識別する為に用いられます。あなたが作成するアプリごとにユニークな名前を付ける必要があります。(DevPortal上では Project Name と表記されます)
+2) アプリ鍵の識別子(ApplicationID)として用いられます。開発中のみ * 一文字の値が使用できます。マスターパッケージ作成時は * 以外の名前をつけてください。 [a-zA-Z0-9_-] 31文字以内</value></data>
+  <data name="cannotSubmissionPublishingUtilitySdkVersion_Text"><value>この SDK のバージョン ( {0} ) はベータ版であるためマスターパッケージの提出はできません。
+正式版の SDK を使用してください。</value></data>
+  <data name="firstSubmitText"><value>"{0}"を提出します。
+宜しいですか？</value></data>
+  <data name="toolTipProductAddButton_Text"><value>Support Locale を一つ以上選択し、適切な Product Label を入力すると有効になります</value></data>
+  <data name="updateSubmitText"><value>"{0}"を{1}から{2}に更新
+するサブミッションです。宜しいですか？</value></data>
+  <data name="descriptionAppLongNames"><value>[必須] アプリケーション名を記述します。64文字以内かつ127byte以内(UTF8)</value></data>
+  <data name="invalidPngMsgBoxBody2_Text"><value>有効なPNGファイルではありません。</value></data>
+  <data name="cannotAdd21thProductMsgBoxBody_Text"><value>新しいプロダクトを追加する事が出来ません。
+すでに２０個のプロダクトが存在します。</value></data>
+  <data name="descriptionResourceHeap"><value>[必須] アプリケーションが使用可能なリソース用ヒープメモリの最大値を指定します。[KiB]
+Managed HeapとResource Heapの合計を96MiBより大きくする事はできません</value></data>
+  <data name="descriptionDeveloperName2"><value>[自動] Dev Portal で登録した開発者名または開発グループ名が表示されます。</value></data>
+  <data name="descriptionAppToken"><value>[任意] ネットワークサービス Wonderland を利用する場合、DevPortalで取得したAppTokenを入力してください。</value></data>
+  <data name="productFormatAlart_Text"><value>[A-Z0-9] の文字を使用し、6文字で定義して下さい</value></data>
+  <data name="exitPromptMsgBoxBody_Text"><value>{0} を終了しようとしています。
+未保存のデータがあります。セーブをしますか？</value></data>
+  <data name="openSeedFileDialogFilter_Text"><value>シードファイル(*.seed)|*.seed|すべてのファイル(*.*)|*.*</value></data>
+  <data name="descriptionCopyright"><value>[必須] 著作権情報を記述したテキストファイル(UTF-8形式)を指定してください。</value></data>
+  <data name="descriptionDeviceLocation"><value>[必須] 位置情報の使用有無を設定します。</value></data>
+  <data name="descriptionDeveloperName"><value>[必須] 開発者名または開発グループ名を入力してください。
+ASCII の 文字か記号（制御コードを除く）</value></data>
+  <data name="newPromptMsgBoxBody_Text"><value>この操作により今まで編集したデータが破棄されます。
+その前にセーブをしますか？</value></data>
+  <data name="failedToConnect_Text"><value>{0}への接続に失敗しました。</value></data>
+  <data name="updateBlockedSubmitText_PsmSdkToUnity"><value>{1} で作成された ApplicationID = {0} のタイトルがすでに販売されています。
+{2} で作成したマスターパッケージでは、このタイトルを更新することはできません。
+このタイトルを更新したい場合、 {3} を使ってマスターパッケージを作成・提出してください。</value></data>
+  <data name="accountBeingAttested_Text"><value>アカウントの認証をしています</value></data>
+  <data name="openPackageFileDialogFilter_Text"><value>PSMパッケージ(*.psmp;*.psdp)|*.psmp;*.psdp|すべてのファイル(*.*)|*.*</value></data>
+  <data name="descriptionDevicePSVitaTV"><value>[必須] PS Vita TVの使用有無を設定します。</value></data>
+  <data name="descriptionRuntimeVersion"><value>[自動] ビルドに用いたSDKで決まるランタイムバージョン番号を表示しています。</value></data>
+  <data name="openSaveFileDialogFilter_Text"><value>XMLファイル(*.xml)|*.xml|すべてのファイル(*.*)|*.*</value></data>
+  <data name="exitPromptMsgBoxTitle_Text"><value>終了の確認</value></data>
+  <data name="correctForamt_Text"><value>正しいフォーマット:
+Size={0}x{1}, {2}</value></data>
+  <data name="updateBlockedSubmitText_UnityToPsmSdk"><value>{1} で作成された ApplicationID = {0} のタイトルがすでに販売されています。 
+{2} で作成したマスターパッケージでは、このタイトルを更新することはできません。
+このタイトルを更新したい場合、 {3} を使ってマスターパッケージを作成・提出してください。</value></data>
+  </root>

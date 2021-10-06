@@ -1,0 +1,451 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<!--app.xml_DevPortal_20140310.xsd-->
+	<xs:element name="application" type="application" />
+	<xs:complexType name="application">
+		<xs:sequence>
+			<xs:element name="app_xml_format" type="app_xml_format" minOccurs="1" />
+			<xs:element name="name" type="app_name" />
+			<xs:element name="short_name" type="app_short_name" />
+			<xs:element name="parental_control" type="parental_control" />
+			<xs:element name="rating_list" type="rating_list" />
+			<xs:element name="images" type="images" />
+			<xs:element name="genre_list" type="genre_list" />
+			<xs:element name="developer" type="developer" />
+			<xs:element name="website" type="website" />
+			<xs:element name="copyright" type="copyright" />
+			<xs:element name="purchase" minOccurs="0" type="purchase" />
+			<xs:element name="runtime_config" type="runtime_config" />
+			<xs:element name="feature_list" type="feature_list" />
+			<xs:element name="psn_service_list" minOccurs="0"
+				type="psn_service_list" />
+			<xs:element name="unity" minOccurs="0" type="unity" /> <!-- Unity for PSM 用 PubUtilの場合、minOccurs=1, Android SDK, PSM SDKの場合、element削除 -->
+		</xs:sequence>
+		<xs:attribute name="project_name" type="project_name_value"
+			use="required" />
+		<xs:attribute name="version" type="app_version_value"
+			use="required" />
+		<xs:attribute name="runtime_version" type="runtime_version_value"
+			use="required" />
+		<xs:attribute name="sdk_version" type="sdk_version_value"
+			use="required" />
+		<xs:attribute name="default_locale" type="xs:language"
+			use="required" />
+	</xs:complexType>
+
+	<xs:simpleType name="project_name_value">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[0-9A-Za-z_\-]{1,31}" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="app_version_value">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[1-9]{1}[0-9]?\.[0-9][0-9]" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="runtime_version_value">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="([1-9]{1}[0-9]?\.[0-9][0-9])|0\.99" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="sdk_version_value">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[1-9]{1}[0-9]?\.[0-9][0-9]\.[0-9][0-9]" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<!-- app.xml format infomation -->
+	<xs:complexType name="app_xml_format">
+		<xs:sequence />
+		<xs:attribute name="version" type="sdk_version_value"
+			use="required" />
+		<xs:attribute name="sdk_type" type="sdk_type_value"
+			use="required" />
+	</xs:complexType>
+
+	<xs:simpleType name="sdk_type_value">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="PSM SDK" />
+			<xs:enumeration value="Unity for PSM" />
+		</xs:restriction>
+	</xs:simpleType>
+	<!-- END of app.xml format infomation -->
+
+
+	<xs:complexType name="app_name">
+		<xs:sequence>
+			<xs:element name="localized_item" minOccurs="1" maxOccurs="19">
+				<xs:complexType>
+					<xs:attribute name="locale" type="xs:language" use="required" />
+					<xs:attribute name="value" type="app_name_value" use="required" />
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:simpleType name="app_name_value">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[^\s\r\n]{1}[^\r\n]{0,62}[^\s\r\n]{1}" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:complexType name="app_short_name">
+		<xs:sequence>
+			<xs:element name="localized_item" minOccurs="1" maxOccurs="19">
+				<xs:complexType>
+					<xs:attribute name="locale" type="xs:language" use="required" />
+					<xs:attribute name="value" type="app_short_name_value"
+						use="required" />
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:simpleType name="app_short_name_value">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[^\r\n]{2,16}" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:complexType name="parental_control">
+		<xs:sequence />
+		<xs:attribute name="lock_level" type="lock_level_value"
+			use="required" />
+	</xs:complexType>
+
+	<xs:simpleType name="lock_level_value">
+		<xs:restriction base="xs:unsignedByte">
+			<xs:minInclusive value="0" />
+			<!-- パレンタルロックは実際は11まで。99の場合、スキーマチェックでなく、IsValidMetadataForPublish()でアウトにする。-->
+			<xs:maxInclusive value="99" />
+
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:complexType name="rating_list">
+		<xs:sequence>
+			<xs:element name="online_features" minOccurs="0"
+				maxOccurs="1" type="rating_online_features" />
+			<xs:element name="rating" minOccurs="1" maxOccurs="3"
+				type="rating" />
+		</xs:sequence>
+		<xs:attribute name="highest_age_limit" type="rating_value"
+			use="required" />
+		<xs:attribute name="has_online_features" type="xs:boolean"
+			default="false" />
+	</xs:complexType>
+
+	<xs:complexType name="rating_online_features">
+		<xs:attribute name="chat" type="xs:boolean" default="false" />
+		<xs:attribute name="personal_info" type="xs:boolean"
+			default="false" />
+		<xs:attribute name="user_location" type="xs:boolean"
+			default="false" />
+		<xs:attribute name="exchange_content" type="xs:boolean"
+			default="false" />
+		<xs:attribute name="minimum_age" type="minimum_age_value"
+			use="optional" />
+	</xs:complexType>
+	<xs:complexType name="rating">
+		<xs:sequence>
+			<xs:element name="descriptor" minOccurs="0" maxOccurs="7"
+				type="descriptor_value" />
+		</xs:sequence>
+		<xs:attribute name="type" type="rating_type_value" use="required" />
+		<xs:attribute name="value" type="rating_value" use="required" />
+		<xs:attribute name="age" type="rating_value" use="required" />
+		<xs:attribute name="code" type="rating_code" use="optional" />
+	</xs:complexType>
+
+	<xs:simpleType name="rating_type_value">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="PEGIEX" />
+			<xs:enumeration value="ESRB" />
+			<xs:enumeration value="SELF" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="minimum_age_value">
+		<xs:restriction base="xs:unsignedByte">
+			<xs:minInclusive value="0" />
+			<xs:maxInclusive value="20" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="rating_value">
+		<xs:restriction base="xs:unsignedByte">
+			<xs:minInclusive value="3" />
+			<!-- レーティング上限は18まで。99の場合、スキーマチェックでなく、IsValidMetadataForPublish()でアウトにする。-->
+			<xs:maxInclusive value="99" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="rating_code">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1" />
+			<xs:maxLength value="256" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="descriptor_value">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Drugs" />
+			<xs:enumeration value="Fear" />
+			<xs:enumeration value="Gambling" />
+			<xs:enumeration value="Language" />
+			<xs:enumeration value="Sex" />
+			<xs:enumeration value="Online" />
+			<xs:enumeration value="Violence" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:complexType name="images">
+		<xs:sequence />
+		<xs:attribute name="icon_128x128" type="path_value" use="required" />
+		<xs:attribute name="icon_256x256" type="path_value" use="required" />
+		<xs:attribute name="icon_512x512" type="path_value" use="required" />
+		<xs:attribute name="splash_854x480" type="path_value"
+			use="required" />
+	</xs:complexType>
+
+	<xs:simpleType name="path_value">
+		<xs:restriction base="xs:string">
+			<xs:pattern value=".{1,255}" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:complexType name="genre_list">
+		<xs:sequence>
+			<xs:element name="genre" minOccurs="1" maxOccurs="2" type="genre" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="genre">
+		<xs:sequence />
+		<xs:attribute name="value" type="genre_value" use="required" />
+	</xs:complexType>
+
+	<xs:simpleType name="genre_value">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Games:Action" />
+			<xs:enumeration value="Games:Adventure" />
+			<xs:enumeration value="Games:Arcade" />
+			<xs:enumeration value="Games:BrainTraining" />
+			<xs:enumeration value="Games:Casual" />
+			<xs:enumeration value="Games:Educational" />
+			<xs:enumeration value="Games:Family" />
+			<xs:enumeration value="Games:Fighting" />
+			<xs:enumeration value="Games:Fitness" />
+			<xs:enumeration value="Games:Horror" />
+			<xs:enumeration value="Games:MusicRhythm" />
+			<xs:enumeration value="Games:Party" />
+			<xs:enumeration value="Games:Puzzle" />
+			<xs:enumeration value="Games:Racing" />
+			<xs:enumeration value="Games:RPG" />
+			<xs:enumeration value="Games:Shooter" />
+			<xs:enumeration value="Games:Simulation" />
+			<xs:enumeration value="Games:Sports" />
+			<xs:enumeration value="Games:Strategy" />
+			<xs:enumeration value="Games:Unique" />
+			<xs:enumeration value="Apps:Audio" />
+			<xs:enumeration value="Apps:Books" />
+			<xs:enumeration value="Apps:Business" />
+			<xs:enumeration value="Apps:Catalogs" />
+			<xs:enumeration value="Apps:Comics" />
+			<xs:enumeration value="Apps:Communication" />
+			<xs:enumeration value="Apps:Education" />
+			<xs:enumeration value="Apps:Entertainment" />
+			<xs:enumeration value="Apps:Finance" />
+			<xs:enumeration value="Apps:HealthAndFitness" />
+			<xs:enumeration value="Apps:Lifestyle" />
+			<xs:enumeration value="Apps:Magazines" />
+			<xs:enumeration value="Apps:Medical" />
+			<xs:enumeration value="Apps:Music" />
+			<xs:enumeration value="Apps:News" />
+			<xs:enumeration value="Apps:Personalization" />
+			<xs:enumeration value="Apps:Photo" />
+			<xs:enumeration value="Apps:Productivity" />
+			<xs:enumeration value="Apps:SocialNetworking" />
+			<xs:enumeration value="Apps:Sports" />
+			<xs:enumeration value="Apps:Travel" />
+			<xs:enumeration value="Apps:Utilities" />
+			<xs:enumeration value="Apps:Video" />
+			<xs:enumeration value="Apps:Weather" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:complexType name="developer">
+		<xs:sequence>
+			<xs:element name="name" type="developer_name" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="developer_name">
+		<xs:sequence />
+		<xs:attribute name="value" type="developer_name_value"
+			use="required" />
+	</xs:complexType>
+
+	<xs:simpleType name="developer_name_value">
+		<xs:restriction base="xs:string">
+			<!--<xs:pattern value="[ -~]{1,64}" />--><!-- Ascii 0x20-0x7e -->
+			<!-- 1.スキーマのチェック 2.開発者情報の埋め込み、の順に処理しているので、文字列長0をOKにしています。-->
+			<xs:pattern value="[ -~]{0,64}" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:complexType name="website">
+		<xs:sequence />
+		<xs:attribute name="href" type="xs:anyURI" use="required" />
+	</xs:complexType>
+
+	<xs:complexType name="copyright">
+		<xs:sequence />
+		<xs:attribute name="author" type="author" use="required" />
+		<xs:attribute name="text" type="path_value" use="required" />
+	</xs:complexType>
+
+	<xs:simpleType name="author">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1" />
+			<xs:maxLength value="255" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:complexType name="purchase">
+		<xs:sequence>
+			<xs:element name="product_list" type="product_list" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="product_list">
+		<xs:sequence>
+			<xs:element name="product" minOccurs="0" maxOccurs="20"
+				type="product" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="product">
+		<xs:sequence>
+			<xs:element name="name" type="product_name" />
+		</xs:sequence>
+		<xs:attribute name="label" type="product_label" use="required" />
+		<xs:attribute name="type" type="product_type" use="required" />
+	</xs:complexType>
+
+	<xs:simpleType name="product_label">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[0-9A-Z]{6}" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="product_type">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="normal" />
+			<xs:enumeration value="consumable" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:complexType name="product_name">
+		<xs:sequence>
+			<xs:element name="localized_item" minOccurs="1" maxOccurs="19">
+				<xs:complexType>
+					<xs:attribute name="locale" type="xs:language" use="required" />
+					<xs:attribute name="value" type="product_name_value"
+						use="required" />
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:simpleType name="product_name_value">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[^\r\n]{1,64}" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:complexType name="runtime_config">
+		<xs:sequence>
+			<xs:any namespace="##any" processContents="skip" maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="feature_list">
+		<xs:sequence>
+			<xs:element name="feature" minOccurs="0" maxOccurs="7"
+				type="feature" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="feature">
+		<xs:sequence />
+		<xs:attribute name="value" type="feature_value" use="required" />
+	</xs:complexType>
+
+	<xs:simpleType name="feature_value">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="GamePad" />
+			<xs:enumeration value="Touch" />
+			<xs:enumeration value="Motion" />
+			<xs:enumeration value="Location" />
+			<xs:enumeration value="Camera" />
+			<xs:enumeration value="PSVitaTV" />
+			<xs:enumeration value="##SDKType:PSM SDK" />
+			<xs:enumeration value="##SDKType:Unity for PSM" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:complexType name="psn_service_list">
+		<xs:sequence>
+			<xs:element name="psn_service" minOccurs="0" maxOccurs="1"
+				type="psn_service" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="psn_service">
+		<xs:sequence />
+		<xs:attribute name="value" type="psn_service_value" use="required" />
+	</xs:complexType>
+
+	<xs:simpleType name="psn_service_value">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Scoreboards" />
+		</xs:restriction>
+	</xs:simpleType>
+
+
+	<!-- Unity for PSM -->
+	<xs:complexType name="unity">
+		<xs:sequence>
+			<xs:element name="unity_original_runtime_version" minOccurs="0" maxOccurs="1"		type="unity_original_runtime_version_type" />
+			<xs:element name="app_ver"                        minOccurs="0" maxOccurs="1"		type="app_ver_type" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="unity_original_runtime_version_type">
+		<xs:sequence />
+		<xs:attribute name="value" type="unity_original_runtime_version_value" use="required" />
+	</xs:complexType>
+
+	<xs:simpleType name="unity_original_runtime_version_value">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[0-9]{2}.[0-9]{1}.[0-9]{1}.[0-9]{1}" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:complexType name="app_ver_type">
+		<xs:sequence />
+		<xs:attribute name="value" type="app_ver_value" use="required" />
+	</xs:complexType>
+
+	<xs:simpleType name="app_ver_value">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[0-9]{2}.[0-9]{2}" />
+		</xs:restriction>
+	</xs:simpleType>
+	<!-- END of Unity for PSM -->
+
+</xs:schema>

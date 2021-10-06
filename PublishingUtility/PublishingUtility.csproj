@@ -1,0 +1,277 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{FC23D313-3360-49DD-AADE-CAE09D527F42}</ProjectGuid>
+    <ProjectTypeGuids>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <OutputType>WinExe</OutputType>
+    <LangVersion>Preview</LangVersion>
+    <AssemblyName>PublishingUtility</AssemblyName>
+    <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>app.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System.Design" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="System.Security" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationIcon Include="app.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PublishingUtility\AbstractExecutor.cs" />
+    <Compile Include="PublishingUtility\AppConfigData.cs" />
+    <Compile Include="PublishingUtility\AppExeKey.cs" />
+    <Compile Include="PublishingUtility\AppExeKeyStatus.cs" />
+    <Compile Include="PublishingUtility\AppKeyRing.cs" />
+    <Compile Include="PublishingUtility\AppKeyUtility.cs" />
+    <Compile Include="PublishingUtility\AppXmlInfo.cs" />
+    <Compile Include="PublishingUtility\CallBackProc.cs" />
+    <Compile Include="PublishingUtility\ChildProcessOutputRedirection.cs" />
+    <Compile Include="PublishingUtility\Command.cs" />
+    <Compile Include="PublishingUtility\ConvertEx.cs" />
+    <Compile Include="PublishingUtility\DeviceSeedStatus.cs" />
+    <Compile Include="PublishingUtility\DeviceSeedUtility.cs" />
+    <Compile Include="PublishingUtility\DeviceStatus.cs" />
+    <Compile Include="PublishingUtility\DeviceType.cs" />
+    <Compile Include="PublishingUtility\Dialog\InstallPakageAppName.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PublishingUtility\Dialog\Progress.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PublishingUtility\Dialog\ProxySetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PublishingUtility\Dialog\TextInputForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PublishingUtility\Dialog\UninstallAppsConfirmationDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PublishingUtility\Dialog\WaitDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PublishingUtility\DrmError.cs" />
+    <Compile Include="PublishingUtility\EnumDisplayNameAttribute.cs" />
+    <Compile Include="PublishingUtility\EnumDisplayNameConverter.cs" />
+    <Compile Include="PublishingUtility\Genre.cs" />
+    <Compile Include="PublishingUtility\GenreDisplayNameConverter.cs" />
+    <Compile Include="PublishingUtility\HostKdbAcquire.cs" />
+    <Compile Include="PublishingUtility\IMetadata.cs" />
+    <Compile Include="PublishingUtility\KeyManagement\ChoicesForPublisherKey.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PublishingUtility\KeyManagement\ExportDeviceSeed01.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PublishingUtility\KeyManagement\GenerateAppKeyRingOpenAppXml.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PublishingUtility\KeyManagement\GenerateDeveloperKey01.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PublishingUtility\KeyManagement\GenerateDeveloperKeyOverwriteCheck.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PublishingUtility\KeyManagement\GenerateDeveloperKeySuccess.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PublishingUtility\KeyManagement\ImportDeviceSeed01.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PublishingUtility\KeyManagement\SignInSENID_Password.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PublishingUtility\KeyUtility.cs" />
+    <Compile Include="PublishingUtility\KPubGenerator.cs" />
+    <Compile Include="PublishingUtility\ListAppsThread.cs" />
+    <Compile Include="PublishingUtility\Locale.cs" />
+    <Compile Include="PublishingUtility\LocaleDisplayNameConverter.cs" />
+    <Compile Include="PublishingUtility\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PublishingUtility\MaxCameraResolutionSize.cs" />
+    <Compile Include="PublishingUtility\MaxCameraResolutionSizeDisplayNameConverter.cs" />
+    <Compile Include="PublishingUtility\MaxScreenSize.cs" />
+    <Compile Include="PublishingUtility\MaxScreenSizeDisplayNameConverter.cs" />
+    <Compile Include="PublishingUtility\Metadata.cs" />
+    <Compile Include="PublishingUtility\OutputLogThread.cs" />
+    <Compile Include="PublishingUtility\Package.cs" />
+    <Compile Include="PublishingUtility\Product.cs" />
+    <Compile Include="PublishingUtility\Program.cs" />
+    <Compile Include="PublishingUtility\ProgressDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PublishingUtility\Properties\Resources.cs" />
+    <Compile Include="PublishingUtility\Properties\Settings.cs" />
+    <Compile Include="PublishingUtility\PsmDeviceError.cs" />
+    <Compile Include="PublishingUtility\PsmDeviceFuncBinding.cs" />
+    <Compile Include="PublishingUtility\PsmDeviceStatus.cs" />
+    <Compile Include="PublishingUtility\PsmSdk.cs" />
+    <Compile Include="PublishingUtility\PublisherKeyType.cs" />
+    <Compile Include="PublishingUtility\PublisherKeyUtility.cs" />
+    <Compile Include="PublishingUtility\RatingFormResult.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PublishingUtility\Rating\RatingFormCrime.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PublishingUtility\Rating\RatingFormDrugs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PublishingUtility\Rating\RatingFormGambling.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PublishingUtility\Rating\RatingFormLanguage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PublishingUtility\Rating\RatingFormMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PublishingUtility\Rating\RatingFormOnline.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PublishingUtility\Rating\RatingFormSex.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PublishingUtility\Rating\RatingFormViolence.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PublishingUtility\Rating\RatingFormViolence02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PublishingUtility\ScePsmApplication.cs" />
+    <Compile Include="PublishingUtility\scePsmDevCreatePackage.cs" />
+    <Compile Include="PublishingUtility\scePsmDevExtractPackage.cs" />
+    <Compile Include="PublishingUtility\ScePsmDevice.cs" />
+    <Compile Include="PublishingUtility\scePsmDevPickFileFromPackage.cs" />
+    <Compile Include="PublishingUtility\scePsmDrmGenerateKpub.cs" />
+    <Compile Include="PublishingUtility\scePsmDrmGenerateKpubInit.cs" />
+    <Compile Include="PublishingUtility\scePsmDrmGenerateKpubTerm.cs" />
+    <Compile Include="PublishingUtility\scePsmDrmGenerateQaKpub.cs" />
+    <Compile Include="PublishingUtility\scePsmDrmGetAccountId.cs" />
+    <Compile Include="PublishingUtility\scePsmDrmGetCertInfo.cs" />
+    <Compile Include="PublishingUtility\scePsmDrmGetHostKdbg.cs" />
+    <Compile Include="PublishingUtility\scePsmDrmGetHostKdbgInit.cs" />
+    <Compile Include="PublishingUtility\scePsmDrmGetHostKdbgTerm.cs" />
+    <Compile Include="PublishingUtility\scePsmDrmGetTargetKdbg.cs" />
+    <Compile Include="PublishingUtility\scePsmDrmGetTargetKdbgInit.cs" />
+    <Compile Include="PublishingUtility\scePsmDrmGetTargetKdbgTerm.cs" />
+    <Compile Include="PublishingUtility\scePsmDrmGetTitleQaTargetKdbg.cs" />
+    <Compile Include="PublishingUtility\ScePsmDrmKpubUploadState.cs" />
+    <Compile Include="PublishingUtility\scePsmDrmReleaseDevPkcs12.cs" />
+    <Compile Include="PublishingUtility\ScePsmDrmStatus.cs" />
+    <Compile Include="PublishingUtility\SceRatingData.cs" />
+    <Compile Include="PublishingUtility\SceSagErrorCode.cs" />
+    <Compile Include="PublishingUtility\SR.cs" />
+    <Compile Include="PublishingUtility\SRDescriptionAttribute.cs" />
+    <Compile Include="PublishingUtility\SubmissionArchiveGenerator32.cs" />
+    <Compile Include="PublishingUtility\SubmissionArchiveGenerator64.cs" />
+    <Compile Include="PublishingUtility\Submit.cs" />
+    <Compile Include="PublishingUtility\SubmitAuth.cs" />
+    <Compile Include="PublishingUtility\SubmitCheckMeta.cs" />
+    <Compile Include="PublishingUtility\SubmitGetMeta.cs" />
+    <Compile Include="PublishingUtility\SubmitUpload.cs" />
+    <Compile Include="PublishingUtility\TargetKdbgAcquirer.cs" />
+    <Compile Include="PublishingUtility\Utility.cs" />
+    <Compile Include="PublishingUtility\VersionInfoDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PublishingUtility\Xml.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="PublishingUtility\Properties\ja\PublishingUtility.Dialog.ProxySetting.ja.resx" />
+    <EmbeddedResource Include="PublishingUtility\Properties\ja\PublishingUtility.KeyManagement.ChoicesForPublisherKey.ja.resx" />
+    <EmbeddedResource Include="PublishingUtility\Properties\ja\PublishingUtility.KeyManagement.ExportDeviceSeed01.ja.resx" />
+    <EmbeddedResource Include="PublishingUtility\Properties\ja\PublishingUtility.KeyManagement.GenerateAppKeyRingOpenAppXml.ja.resx" />
+    <EmbeddedResource Include="PublishingUtility\Properties\ja\PublishingUtility.KeyManagement.GenerateDeveloperKey01.ja.resx" />
+    <EmbeddedResource Include="PublishingUtility\Properties\ja\PublishingUtility.KeyManagement.GenerateDeveloperKeySuccess.ja.resx" />
+    <EmbeddedResource Include="PublishingUtility\Properties\ja\PublishingUtility.KeyManagement.SignInSENID_Password.ja.resx" />
+    <EmbeddedResource Include="PublishingUtility\Properties\ja\PublishingUtility.MainForm.ja.resx" />
+    <EmbeddedResource Include="PublishingUtility\Properties\ja\PublishingUtility.Properties.Resources.ja.resx" />
+    <EmbeddedResource Include="PublishingUtility\Properties\ja\PublishingUtility.Rating.RatingFormCrime.ja.resx" />
+    <EmbeddedResource Include="PublishingUtility\Properties\ja\PublishingUtility.Rating.RatingFormDrugs.ja.resx" />
+    <EmbeddedResource Include="PublishingUtility\Properties\ja\PublishingUtility.Rating.RatingFormGambling.ja.resx" />
+    <EmbeddedResource Include="PublishingUtility\Properties\ja\PublishingUtility.Rating.RatingFormLanguage.ja.resx" />
+    <EmbeddedResource Include="PublishingUtility\Properties\ja\PublishingUtility.Rating.RatingFormMain.ja.resx" />
+    <EmbeddedResource Include="PublishingUtility\Properties\ja\PublishingUtility.Rating.RatingFormOnline.ja.resx" />
+    <EmbeddedResource Include="PublishingUtility\Properties\ja\PublishingUtility.Rating.RatingFormSex.ja.resx" />
+    <EmbeddedResource Include="PublishingUtility\Properties\ja\PublishingUtility.Rating.RatingFormViolence.ja.resx" />
+    <EmbeddedResource Include="PublishingUtility\Properties\ja\PublishingUtility.Rating.RatingFormViolence02.ja.resx" />
+    <EmbeddedResource Include="PublishingUtility\Properties\ja\PublishingUtility.RatingFormResult.ja.resx" />
+    <EmbeddedResource Include="PublishingUtility\Properties\ja\PublishingUtility.VersionInfoDialog.ja.resx" />
+    <EmbeddedResource Include="PublishingUtility\app.xsd" />
+    <EmbeddedResource Include="PublishingUtility\Dialog\InstallPakageAppName.resx" />
+    <EmbeddedResource Include="PublishingUtility\Dialog\Progress.resx" />
+    <EmbeddedResource Include="PublishingUtility\Dialog\ProxySetting.resx" />
+    <EmbeddedResource Include="PublishingUtility\Dialog\UninstallAppsConfirmationDialog.resx" />
+    <EmbeddedResource Include="PublishingUtility\KeyManagement\ChoicesForPublisherKey.resx" />
+    <EmbeddedResource Include="PublishingUtility\KeyManagement\ExportDeviceSeed01.resx" />
+    <EmbeddedResource Include="PublishingUtility\KeyManagement\GenerateAppKeyRingOpenAppXml.resx" />
+    <EmbeddedResource Include="PublishingUtility\KeyManagement\GenerateDeveloperKey01.resx" />
+    <EmbeddedResource Include="PublishingUtility\KeyManagement\GenerateDeveloperKeyOverwriteCheck.resx" />
+    <EmbeddedResource Include="PublishingUtility\KeyManagement\GenerateDeveloperKeySuccess.resx" />
+    <EmbeddedResource Include="PublishingUtility\KeyManagement\SignInSENID_Password.resx" />
+    <EmbeddedResource Include="PublishingUtility\MainForm.resx" />
+    <EmbeddedResource Include="PublishingUtility\ProgressDialog.resx" />
+    <EmbeddedResource Include="PublishingUtility\Properties\Resources.resx" />
+    <EmbeddedResource Include="PublishingUtility\RatingFormResult.resx" />
+    <EmbeddedResource Include="PublishingUtility\Rating\RatingFormCrime.resx" />
+    <EmbeddedResource Include="PublishingUtility\Rating\RatingFormDrugs.resx" />
+    <EmbeddedResource Include="PublishingUtility\Rating\RatingFormGambling.resx" />
+    <EmbeddedResource Include="PublishingUtility\Rating\RatingFormLanguage.resx" />
+    <EmbeddedResource Include="PublishingUtility\Rating\RatingFormMain.resx" />
+    <EmbeddedResource Include="PublishingUtility\Rating\RatingFormOnline.resx" />
+    <EmbeddedResource Include="PublishingUtility\Rating\RatingFormSex.resx" />
+    <EmbeddedResource Include="PublishingUtility\Rating\RatingFormViolence.resx" />
+    <EmbeddedResource Include="PublishingUtility\Rating\RatingFormViolence02.resx" />
+    <EmbeddedResource Include="PublishingUtility\VersionInfoDialog.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PanelManager\PanelManager.csproj">
+      <Project>{6acfb7b1-86e1-4a78-9084-a99487d533bf}</Project>
+      <Name>PanelManager</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="cxml\appinfo\appinfo_compiler.py">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="cxml\compiler\cxml.py">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="default_copyright.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
